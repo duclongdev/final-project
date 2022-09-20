@@ -14,6 +14,5 @@ public class CurrencyCalculationController {
     @GetMapping("from/{from}/to/{to}/amount/{amount}")
     public CalculatedAmount result(@PathVariable String from, @PathVariable String to, @PathVariable Integer amount){
         return calculatedService.Calculated2(from, to, amount);
-
     }
 }
