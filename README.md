@@ -50,6 +50,9 @@
 }
 ```
 - Tạo một instance với port là **8101**, đăng ký cả 2 với **Eureka Server**
+- ![image](https://user-images.githubusercontent.com/108172013/191316492-9027226c-1a16-4fac-a701-0c78a1eb93da.png)
+
+
 #### Cập nhật properties khi ứng dụng đang chạy
 #### 5. Tạo `Gateway` với port là **8765**, đăng ký tới **Eureka**
 - Cài đặt Currency Exchange Service vào gateway
