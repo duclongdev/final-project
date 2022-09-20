@@ -1,5 +1,6 @@
 package com.example.currencycalculation.service.impl;
 
+import com.example.currencycalculation.facade.CurrencyExchangeProxy;
 import com.example.currencycalculation.model.CalculatedAmount;
 import com.example.currencycalculation.service.CalculatedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ public class CalculatedServiceImpl implements CalculatedService {
     private RestTemplate restTemplate;
    @Autowired
    private Environment environment;
+   @Autowired
+   private CurrencyExchangeProxy proxy;
     @Override
     public CalculatedAmount Calculated(String from, String to, Integer amount) {
         String temp = restTemplate
@@ -22,6 +25,13 @@ public class CalculatedServiceImpl implements CalculatedService {
         System.out.println("port: " + environment.getProperty("local.server.port"));
         CalculatedAmount calculatedAmount = new CalculatedAmount(price, amount, total, environment.getProperty("local.server.port"));
         return calculatedAmount;
+    }
+    public CalculatedAmount Calculated2(String from, String to, Integer amount){
+        String price = proxy.retrieveExchangeValue(from);
+        Integer TranferPrice = Integer.valueOf(price);
+        CalculatedAmount calculatedAmount = new CalculatedAmount(Integer.valueOf(price), amount, CalculateResult(TranferPrice, amount),
+                environment.getProperty("local.server.port"));
+        return  calculatedAmount;
     }
     private Integer CalculateResult(Integer price, Integer amount) {
         return price * amount;

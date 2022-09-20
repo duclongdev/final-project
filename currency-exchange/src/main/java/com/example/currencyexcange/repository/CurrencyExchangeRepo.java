@@ -8,8 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface CurrencyExchangeRepo {
-    @Select("select * from exchange_value")
-    List<CurrencyExchangeDTO> findALl();
+
     @Select("select conversion_multiple from exchange_value where currency_from = #{type}")
     String getByForeign(String type);
 }
