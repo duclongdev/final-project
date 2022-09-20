@@ -1,6 +1,9 @@
 ### Họ và tên: Nguyễn Đức Long
 
 ### MSSV: 20521566
+### Danh sách bài tập:
+- [Danh sách bài tập quá trình](https://github.com/duclongdev/Springboot-with-LIKELION)
+- [Bài tập thu hoạch giữa kì](https://github.com/duclongdev/E-commerce-management-with-LIKELION-week-3)
 
 #### 1. Tạo một `Config Server` sử dụng git remote, gồm 3 file:
 
